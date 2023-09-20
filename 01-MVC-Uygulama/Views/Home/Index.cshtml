@@ -1,0 +1,37 @@
+﻿
+@{
+    string isim="Sefa";
+    string soyIsim = "ATTİLA";
+    int yas = 25;
+    string[] isimler = { "Sefa", "Naime", "Furkan" };
+    string[] soyad = { "Attila", "Damataşı", "Kartal" };
+}
+
+<ul>
+    <li>@isim</li>
+    <li>@soyIsim</li>
+    <li>@yas</li>
+</ul>
+
+@if(yas>20){
+    <p>Yaş Büyük @yas</p>
+}
+else{
+    <p>Küçük</p>
+}
+@(yas < 20 ? "Küçük" : "Büyük")
+
+<hr />
+
+@for(int i=0;i<isimler.Length;i++){
+    if (isimler[i] == "Sefa" || isimler[i]=="Naime")
+    {
+        <p><b>@isimler[i] @soyad[i]</b></p>
+    }
+    else
+    {
+        <p>@isimler[i] @soyad[i]</p>
+    }
+
+    <br />
+}
