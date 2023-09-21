@@ -1,0 +1,57 @@
+﻿@model Person
+
+<h3>Request Form</h3>
+<form asp-action="Index" method="post">
+    <label>Id</label>
+    <input type="text" name="pId"/>
+    <br />
+    <label>Ad</label>
+    <input type="text" name="ad" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" name="soyad" />
+    <br />
+    <input type="submit" value="Gönder"/>
+</form>
+
+<h3>Action Parameters(Name ler) ile</h3>
+<form asp-action="Index" method="post">
+    <label>Id</label>
+    <input type="text" name="pId" />
+    <br />
+    <label>Ad</label>
+    <input type="text" name="ad" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" name="soyad" />
+    <br />
+    <input type="submit" value="Gönder" />
+</form>
+
+<h3>Model ile</h3>
+<form asp-action="Index" method="post">
+    <label asp-for="PersonId"></label>
+    <input type="text" asp-for="PersonId" />
+    <br />
+    <label>Ad</label>
+    <input type="text" asp-for="Ad" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" asp-for="Soyad" />
+    <br />
+    <input type="submit" value="Gönder" />
+</form>
+
+<h3>QueryString İle</h3>
+<form asp-action="Post" method="get">
+    <label>Id</label>
+    <input type="text" name="pId" />
+    <br />
+    <label>Ad</label>
+    <input type="text" name="ad" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" name="soyad" />
+    <br />
+    <input type="submit" value="Gönder" />
+</form>

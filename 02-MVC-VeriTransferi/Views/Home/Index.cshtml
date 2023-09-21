@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>@ViewData["mesaj"]</p>
+<p>@ViewBag.Message</p>
+
+@{
+    Person p1 = (Person)ViewData["per1"];
+    Person p2 = ViewBag.Per2;
+}
+
+<h3>ViewData</h3>
+<p>
+    @p1.PersonId - @p1.Ad - @p1.Soyad
+</p>
+
+<h3>ViewBag(Dinamik)</h3>
+<p>
+    @p2.PersonId - @p2.Ad - @p2.Soyad
+</p>
+
+<h3>ViewBag No Assign</h3>
+<p>
+    @ViewBag.Per2.PersonId - @ViewBag.Per2.Ad - @ViewBag.Per2.Soyad
+</p>
+
+<h3>ViewData List</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+    </tr>
+    @foreach(Person person in (List<Person>)ViewData["personList"])
+    {
+        <tr>
+            <td>@person.PersonId</td>
+            <td>@person.Ad</td>
+            <td>@person.Soyad</td>
+        </tr>
+    }
+</table>
+
+
+<h3>ViewBag List</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+    </tr>
+    @foreach (Person person in ViewBag.persons)
+    {
+            <tr>
+                <td>@person.PersonId</td>
+                <td>@person.Ad</td>
+                <td>@person.Soyad</td>
+            </tr>
+    }
+</table>
