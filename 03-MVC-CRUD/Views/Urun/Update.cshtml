@@ -1,0 +1,31 @@
+﻿@model Urun
+
+<form asp-controller="Urun" asp-action="Update" method="post">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row"><label asp-for="Id"></label></th>
+                <td><input type="number" asp-for="Id" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Marka"></label></th>
+                <td><input type="text" asp-for="Marka" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="UrunAdi"></label></th>
+                <td><input type="text" asp-for="UrunAdi" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Fiyat"></label></th>
+                <td><input type="number" asp-for="Fiyat" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="KategoriId"></label></th>
+                <td><input type="number" asp-for="KategoriId" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-success" style="background-color:orange">Güncelle</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>

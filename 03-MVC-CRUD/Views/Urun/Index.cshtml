@@ -1,0 +1,41 @@
+﻿@model List<Urun>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ürünler Sayfası</h1>
+<a asp-controller="Urun" asp-action="UrunEkle" class="btn btn-primary" style="background-color:orange">Yeni Ürün Ekle</a>
+
+<form asp-controller="Urun" asp-action="Index" method="get">
+    <input type="text" name="search"/>
+    <input type="submit" value="Ara"/>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marka</th>
+            <th scope="col">UrunAdi</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">KategoriId</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <td>@item.Marka</td>
+                <td>@item.UrunAdi</td>
+                <td>@item.Fiyat</td>
+                <td>@item.KategoriId</td>
+                <td><a asp-controller="Urun" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary" style="background-color:orange">Güncelle</a></td>
+                <td><a asp-controller="Urun" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary" style="background-color:red">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,44 @@
+﻿@model Urun
+@{
+    ViewData["Title"] = "UrunEkle";
+}
+
+<h1>UrunEkle</h1>
+<form asp-controller="Urun" asp-action="UrunEkle" method="post">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row"><label asp-for="Id"></label></th>
+                <td><input type="number" asp-for="Id" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Marka"></label></th>
+                <td><input type="text" asp-for="Marka" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="UrunAdi"></label></th>
+                <td><input type="text" asp-for="UrunAdi" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Fiyat"></label></th>
+                <td><input type="number" asp-for="Fiyat" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="KategoriId"></label></th>
+                <td>
+                    <select asp-for="KategoriId">
+                        @foreach (Kategori item in ViewBag.Kategori)
+                        {
+                            <option value="@item.Id">@item.KategoriAd</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-success" style="background-color:orange">Yeni Ürün Ekle</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+
