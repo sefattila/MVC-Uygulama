@@ -21,7 +21,14 @@
             </tr>
             <tr>
                 <th scope="row"><label asp-for="KategoriId"></label></th>
-                <td><input type="number" asp-for="KategoriId" /></td>
+                <td>
+                    <select asp-for="KategoriId">
+                        @foreach (Kategori item in ViewBag.Kategori)
+                        {
+                            <option value="@item.Id">@item.KategoriAd</option>
+                        }
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><button type="submit" class="btn btn-success" style="background-color:orange">Güncelle</button></td>

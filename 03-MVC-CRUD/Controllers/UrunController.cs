@@ -40,6 +40,7 @@ namespace _03_MVC_CRUD.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
+            ViewBag.Kategori = Data.Kategoriler;
             Urun urun =Data.Urunler.FirstOrDefault(x=>x.Id== id);
             return View(urun);
         }
