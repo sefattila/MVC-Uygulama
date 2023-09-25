@@ -1,0 +1,19 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_MyLayout";
+}
+
+@section scrpt{
+    <partial name="_MyScriptPartialView" />
+}
+<div class="text-center">
+    <h3>HTML Helper</h3>
+
+    @await Html.PartialAsync("_ProductPartialView")
+
+    <h3>Tag Helper</h3>
+    <partial name="_ProductPartialView" model="Model" /> @*sadece birinide gönderebilirim Model[0]*@    
+</div>  
+

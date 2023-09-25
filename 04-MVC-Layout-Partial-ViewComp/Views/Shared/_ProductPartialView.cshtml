@@ -1,0 +1,10 @@
+﻿@model List<Product>
+
+
+<div class="text-center">
+<h1>Burası Product Partial View</h1>
+    @foreach (Product product in Model)
+    {
+        <p>@product.Id - @product.Name - @product.Price</p>
+    }
+</div>
