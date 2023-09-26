@@ -1,0 +1,38 @@
+﻿@model IEnumerable<_05_MVC_SinifOgrenci.Models.Classroom>
+
+<div class="container text-center">
+    <p>
+        <a asp-action="Create" class="btn btn-success">Create New</a>
+    </p>
+</div>
+<div class="container text-center col-lg-6">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a asp-action="StudentList" asp-route-id="@item.Id" class="btn btn-outline-success">Öğrencileri Görüntüle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

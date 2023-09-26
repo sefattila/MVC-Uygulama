@@ -1,0 +1,28 @@
+﻿@model _05_MVC_SinifOgrenci.Models.VMs.CreateVMs
+
+<form asp-controller="Student" asp-action="Create" method="post">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row"><label asp-for="Student.Id"></label></th>
+                <td><input type="number" asp-for="Student.Id" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Student.FirstName"></label></th>
+                <td><input type="text" asp-for="Student.FirstName" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Student.LastName"></label></th>
+                <td><input type="text" asp-for="Student.LastName" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label asp-for="Student.ClassId"></label></th>
+                <td>
+                    <select asp-for="Student.ClassId" asp-items="@(new SelectList(Model.Classrooms,"Id","Name"))" class="form-control w-25" >
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="Ekle" class="btn btn-primary" />
+</form>
