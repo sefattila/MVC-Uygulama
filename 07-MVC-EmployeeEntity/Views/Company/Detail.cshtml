@@ -1,0 +1,25 @@
+﻿@using _07_MVC_EmployeeEntity.Entities;
+@model Company
+
+<div class="container col-lg-8 text-center">
+    <h1>Detail</h1>
+    <table class="table border">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <th>@Model.Id</th>
+                    <td>@Model.Brand</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Address</td>
+                </tr>
+        </tbody>
+    </table>
+    <a asp-controller="Company" asp-action="Index" class="btn btn-success">Back To List</a>
+</div>

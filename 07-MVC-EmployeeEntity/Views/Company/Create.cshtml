@@ -1,0 +1,32 @@
+﻿@using _07_MVC_EmployeeEntity.Entities;
+@model Company
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container col-lg-4">
+    <h1>Create</h1> 
+    <form asp-controller="Company" asp-action="Create">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row"><label asp-for="Brand"></label></th>
+                    <td><input type="text" asp-for="Brand" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label asp-for="Name"></label></th>
+                    <td><input type="text" asp-for="Name" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label asp-for="Address"></label></th>
+                    <td><input type="text" asp-for="Address" /></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-success">Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+

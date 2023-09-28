@@ -1,0 +1,35 @@
+﻿@using _07_MVC_EmployeeEntity.Entities;
+@model IList<Company>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container col-lg-8 text-center">
+    <h1>Index</h1>
+    <table class="table border">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Detail</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Company company in Model)
+            {
+                <tr>
+                    <th>@company.Id</th>
+                    <td>@company.Brand</td>
+                    <td><a asp-controller="Company" asp-action="Detail" asp-route-id="@company.Id" class="btn btn-primary">Detail</a></td>
+                    <td><a asp-controller="Company" asp-action="Update" asp-route-id="@company.Id" class="btn btn-success">Update</a></td>
+                    <td><a asp-controller="Company" asp-action="Delete" asp-route-id="@company.Id" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="Company" asp-action="Create" class="btn btn-success">Add New Company</a>
+</div>
