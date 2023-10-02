@@ -1,0 +1,16 @@
+﻿@model Person
+
+<br />
+<label asp-for="FirstName"></label>
+<input type="text" id="createFirstName"/>
+<br />
+<label asp-for="LastName"></label>
+<input type="text" id="createLastName" />
+<br />
+<label asp-for="BirthDate"></label>
+<input type="date" id="createBirthDate" />
+<br />
+<label asp-for="ComputerCounts"></label>
+<input type="number" id="createComputerCounts" />
+<br />
+<a class="btn btn-outline-success" onclick="CreatePerson()">Save</a>

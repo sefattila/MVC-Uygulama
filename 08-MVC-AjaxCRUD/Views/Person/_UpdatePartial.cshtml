@@ -1,0 +1,16 @@
+﻿@model Person
+
+<br />
+<label asp-for="FirstName"></label>
+<input type="text" id="updateFirstName" asp-for="FirstName"/>
+<br />
+<label asp-for="LastName"></label>
+<input type="text" id="updateLastName" asp-for="LastName"/>
+<br />
+<label asp-for="BirthDate"></label>
+<input type="date" id="updateBirthDate" asp-for="BirthDate" />
+<br />
+<label asp-for="ComputerCounts"></label>
+<input type="number" id="updateComputerCounts" asp-for="ComputerCounts"/>
+<br />
+<a class="btn btn-outline-warning" onclick="UpdatePerson(@Model.Id)">Update</a>
