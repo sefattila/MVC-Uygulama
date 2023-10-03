@@ -53,5 +53,16 @@ namespace _08_MVC_AjaxCRUD.Controllers
             }
             return Json("fail");
         }
+
+        public IActionResult Delete(int id)
+        {
+            _dbContext.People.Remove(_dbContext.People.Find(id));
+            if (_dbContext.SaveChanges() > 0)
+            {
+                return Json("ok");
+            }
+            return Json("fail");
+        }
+
     }
 }

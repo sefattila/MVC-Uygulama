@@ -62,7 +62,7 @@ function GetUpdatePage(id) {
         method:"get",
         success: function (response) {
             $("#update").html(response);
-            $("#error").html("Hata(Güncelleme Sayfası)");
+            $("#error").html("");
         }
     });
 }
@@ -79,6 +79,35 @@ function UpdatePerson(sid) {
         url: "Person/Update",
         method: "post",
         data: person,
+        success: function (response) {
+            if (response == "ok") {
+                GetList();
+            }
+            else {
+                $("error").html("Güncelleme işleminde hata oluştu");
+            }
+        }
+    });
+}
+
+function Delete(id) {
+    $.ajax({
+        url:"/Person/Delete/" + id,
+        method: "get",
+        success: function (response) {
+            if (response == "ok")
+                GetList();
+            else
+                $("#error").html("HATA: Silme işlemi başarısız");
+        }
+    });
+}
+
+function UpdatePerson2() {
+    $.ajax({
+        url: "/Person/Update",
+        method: "post",
+        data: $("#myForm").serialize(),
         success: function (response) {
             if (response == "ok") {
                 GetList();

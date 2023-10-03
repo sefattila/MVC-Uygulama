@@ -22,7 +22,7 @@
                 <td>@person.BirthDate</td>
                 <td>@person.ComputerCounts</td>
                 <td><a class="btn btn-warning" onclick="GetUpdatePage(@person.Id)">Update</a></td>
-                <td><a class="btn btn-danger">Delete</a></td>
+                <td><a class="btn btn-danger" onclick="Delete(@person.Id)">Delete</a></td>
             </tr>
         }
     </tbody>
