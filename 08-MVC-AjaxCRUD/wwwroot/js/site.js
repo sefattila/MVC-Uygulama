@@ -118,3 +118,5 @@ function UpdatePerson2() {
         }
     });
 }
+
+$(document).ready(GetList());
