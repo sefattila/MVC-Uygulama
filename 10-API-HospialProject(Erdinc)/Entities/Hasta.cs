@@ -2,10 +2,13 @@
 {
     public class Hasta
     {
-        public string Adı { get; set; }
-        public string Soyadı { get; set; }
+        public string Id { get; set; }
+        public string Ad { get; set; }
+        public string Soyad { get; set; }
         public string Klinik { get; set; }
         public DateTime MuayeneTarihi { get; set; }
         public int HastaneId { get; set; }
+
+        public Hastane Hastane { get; set; }
     }
 }
