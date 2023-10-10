@@ -20,6 +20,13 @@ namespace _10_API_HospialProject_Erdinc_
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            //II.Yöntem
+            //builder.Services.AddCors(options => options.AddPolicy("AllowOrigin", opt => opt.AllowAnyOrigin()));
+
+            //III.Yöntem
+            builder.Services.AddCors(options => options.AddPolicy("myClient", opt => opt.WithOrigins("https://localhost:7014", "https://localhost:7094")
+                .SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyHeader().AllowAnyMethod()));
+                
 
             var app = builder.Build();
 
@@ -31,6 +38,18 @@ namespace _10_API_HospialProject_Erdinc_
             }
 
             app.UseHttpsRedirection();
+
+            //I.Yöntem
+            //app.UseCors(options =>
+            //{
+            //    options.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+            //});
+
+            //II.Yöntem
+            //app.UseCors(options => options.AllowAnyOrigin());
+
+            //III.Yöntem
+            app.UseCors("myClient");
 
             app.UseAuthorization();
 
